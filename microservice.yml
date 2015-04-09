@@ -1,0 +1,28 @@
+microservice:
+  spec_version: '2.0'
+  name: 'Site-Scraper'
+  description: '<p>Find the title and description for a specific web page.</p>'
+  docker_image: 'cloudspace/go-site-scraper'
+  docker_image_tag: '0.1'
+  repo_url: 'https://github.com/cloudspace/GoSiteScraper'
+  docker_hub_url: 'https://registry.hub.docker.com/u/cloudspace/go-site-scraper/'
+  category: 'images'
+  tags: ['scraper']
+  developer_name: 'cloudspace'
+  developer_type: 'Organization'
+  published: true
+  command: '/scraper [url]'
+  inputs:
+    url:
+      param_type: 'Url'
+      regex: '^https?:\\/\\/[\\S]+$'
+      required: true
+      secure: false
+      description: 'The url of the webpage to scrape'
+  outputs:
+    title:
+      param_type: 'String'
+      description: 'The title of the webpage'
+   description:
+      param_type: 'String'
+      description: 'The description of the webpage

@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:edge
-RUN apk update
-RUN apk-install libxml2 ca-certificates
+FROM ubuntu:latest
+RUN apt-get install -y libxml2-dev ca-certificates
 ADD ./scraper /scraper
+ADD ./microservice.yml /microservice.yml
